@@ -2,7 +2,7 @@ FROM alpine:latest
 
 RUN sed -i 's|https://dl-cdn.alpinelinux.org|http://mirrors.tuna.tsinghua.edu.cn|g' /etc/apk/repositories
 
-RUN apk add --no-cache --virtual .build-app curl tzdata expect git
+RUN apk add --no-cache --virtual .build-app curl tzdata git
 
 RUN apk add --no-cache openjdk17-jdk libstdc++
 
@@ -16,7 +16,7 @@ RUN curl 'https://gh.con.sh/https://github.com/iTXTech/mirai-console-loader/rele
 
 RUN chmod +x /app/mcl
 
-RUN git clone https://hub.fgit.cf/MrXiaoM/qsign.git
+RUN git clone https://github.com/MrXiaoM/qsign.git
 
 RUN cd ./qsign; \
     git checkout mirai; \
